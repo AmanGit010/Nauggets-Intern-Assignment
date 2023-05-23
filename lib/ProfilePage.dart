@@ -28,18 +28,18 @@ class _ProfilePageState extends State<ProfilePage> {
     });
   }
 
-  Future apicall() async {
-    http.Response response;
-    response = await http.get(Uri.parse("https://reqres.in/api/unknown"));
-    stringResponse = response.body;
-    if (response.statusCode == 200) {
-      setState(() {
-        // stringResponse = response.body;
+  // Future apicall() async {
+  //   http.Response response;
+  //   response = await http.get(Uri.parse("https://reqres.in/api/unknown"));
+  //   stringResponse = response.body;
+  //   if (response.statusCode == 200) {
+  //     setState(() {
+  //       // stringResponse = response.body;
 
-        mapResponse = json.decode(response.body);
-      });
-    }
-  }
+  //       mapResponse = json.decode(response.body);
+  //     });
+  //   }
+  // }
 
   String name = '';
   String balance = '';
@@ -161,13 +161,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     Text(
                       name,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Color.fromARGB(255, 17, 79, 179),
                           fontWeight: FontWeight.bold,
                           fontSize: 25),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 28),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 28),
                       child: Row(
                         children: [
                           Text(
@@ -189,27 +189,27 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 145, left: 45),
+              padding: const EdgeInsets.only(top: 130, left: 45),
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     "Balance",
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.monetization_on_outlined,
                     color: Colors.black,
                     size: 30,
                   ),
                   Text(
                     balance,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 30,
                         fontWeight: FontWeight.bold),
@@ -217,57 +217,69 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 220, left: 80),
+            const Padding(
+              padding: EdgeInsets.only(top: 185, left: 80),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: const Color.fromARGB(255, 223, 223, 223),
                     radius: 30,
-                    child: Icon(
-                      Icons.add,
-                      size: 40,
-                      color: Color.fromARGB(255, 17, 79, 179),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.add,
+                        size: 40,
+                        color: Color.fromARGB(255, 17, 79, 179),
+                      ),
                     ),
                   )
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 220, left: 170),
+            const Padding(
+              padding: EdgeInsets.only(top: 185, left: 170),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: const Color.fromARGB(255, 223, 223, 223),
                     radius: 30,
-                    child: Icon(
-                      Icons.search,
-                      size: 40,
-                      color: Color.fromARGB(255, 17, 79, 179),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.search,
+                        size: 40,
+                        color: Color.fromARGB(255, 17, 79, 179),
+                      ),
                     ),
                   )
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 220, left: 260),
+            const Padding(
+              padding: EdgeInsets.only(top: 185, left: 260),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: Color.fromARGB(255, 223, 223, 223),
                     radius: 30,
-                    child: Icon(
-                      Icons.auto_graph_sharp,
-                      size: 40,
-                      color: Color.fromARGB(255, 17, 79, 179),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.white,
+                      child: Icon(
+                        Icons.auto_graph_sharp,
+                        size: 40,
+                        color: Color.fromARGB(255, 17, 79, 179),
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  top: 310, left: 35, right: 35, bottom: 40),
+                  top: 270, left: 35, right: 35, bottom: 90),
               child: FractionallySizedBox(
                 heightFactor: 1.0,
                 widthFactor: 1.0,
@@ -275,27 +287,125 @@ class _ProfilePageState extends State<ProfilePage> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       color: Color.fromARGB(226, 76, 175, 79)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 260, right: 15, bottom: 185, top: 17),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(55, 0, 0, 0)),
-                      child: Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 260, right: 15, top: 22),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color.fromARGB(55, 0, 0, 0)),
+                          child: const Center(
+                            child: Text(
+                              "CARD",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 32, top: 20),
                         child: Text(
-                          "CARD",
+                          "3567 55437 9080 5600",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 18,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 164),
+                        child: Text(
+                          "Card Number",
+                          style: TextStyle(fontSize: 20, color: Colors.white),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 32),
+                            child: Text(
+                              name,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 105,
+                          ),
+                          Text(
+                            "10/29",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(right: 100, left: 32),
+                            child: Text(
+                              "Cardholder",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 17),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 32,
+                          ),
+                          Text(
+                            "Valid",
+                            style: TextStyle(color: Colors.white, fontSize: 17),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 540, left: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "My Cards",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 235,
+                      ),
+                      Icon(Icons.arrow_forward_ios)
+                    ],
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 35),
+                      child: Divider(
+                        thickness: 1,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
